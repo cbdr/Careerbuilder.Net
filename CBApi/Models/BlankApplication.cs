@@ -11,5 +11,8 @@ namespace CBApi.Models {
         public string JobTitle { get; set; }
         public int TotalQuestions { get; set; }
         public int TotalRequiredQuestions { get; set; }
+        public string CustomApplyType { get; set; }
+        public string ExternalClientKey { get; set; }
+        public string AccountDID { get; set; }
     }
 }
