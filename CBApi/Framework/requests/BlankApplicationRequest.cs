@@ -1,12 +1,15 @@
 ﻿using System;
 using RestSharp;
 using CBApi.Models;
+using System.Net;
 
 namespace CBApi.Framework.Requests
 {
     internal class BlankApplicationRequest : GetRequest
     {
         protected string JobDid = "";
+        
+
 
         public BlankApplicationRequest(string jobDid, APISettings settings)
             : base(settings)
@@ -25,6 +28,7 @@ namespace CBApi.Framework.Requests
             {
                 throw new ArgumentException("This does not look like a job did");
             }
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Ssl3 | (SecurityProtocolType)768 | (SecurityProtocolType)3072;
         }
 
         public override string BaseUrl
